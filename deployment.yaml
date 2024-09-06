@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: breezebox
+spec:  
+  replicas: 3
+  selector:
+    matchLabels:
+      app: breezebox
+  template:
+    metadata:
+      labels:
+        app: breezebox
+    spec:
+      containers:
+      - name: breezebox
+        image: 590183747373.dkr.ecr.us-east-1.amazonaws.com/breezebox:latest  
+        ports:
+        - containerPort: 80
