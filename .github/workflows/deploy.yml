@@ -30,8 +30,8 @@ jobs:
       - name: Set up eksctl
         run: |
           ARCH=amd64
-          PLATFORM=$(uname -s)_$ARCH
-          curl -sLO "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_$PLATFORM.tar.gz"
+          PLATFORM=windows_$ARCH
+          curl -sLO "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_$PLATFORM.zip"
           sudo mv /tmp/eksctl /usr/local/bin
           eksctl version
 
